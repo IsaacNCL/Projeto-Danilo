@@ -127,19 +127,20 @@ void cadastro(LIVRO *a)
 {
     pr=fopen("CAD.dat","ab+");
     setbuf(stdin,NULL);
-    printf("\t\tDIGITE O CODIGO DO LIVRO:\n\t\t");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tDIGITE O CODIGO DO LIVRO:");
     gets(a->CLIVRO);
     setbuf(stdin,NULL);
-    printf("\t\tDIGITE O NOME DO LIVRO:\n\t\t");
+    printf("\t\tDIGITE O NOME DO LIVRO:");
     gets(a->NLIVRO);
     setbuf(stdin,NULL);
-    printf("\t\tDIGITE O AUTOR DO LIVRO:\n\t\t");
+    printf("\t\tDIGITE O AUTOR DO LIVRO:");
     gets(a->ALIVRO);
     setbuf(stdin,NULL);
-    printf("\t\tQUANTIDADE DE EXEMPLARES:\n\t\t");
+    printf("\t\tQUANTIDADE DE EXEMPLARES:");
     scanf("%d",&a->Quant);
     setbuf(stdin,NULL);
-    printf("\t\tAREA DE CONHECIMENTO:\n\t\t");
+    printf("\t\tAREA DE CONHECIMENTO:");
     gets(a->area);
     setbuf(stdin,NULL);
     fwrite(a,sizeof(*a),1,pr);
@@ -150,7 +151,8 @@ void editar(LIVRO *a)
     char LIVROAT[100];
     int se;
     setbuf(stdin,NULL);
-    printf("\t\t DIGITE O NOME DO LIVRO QUE DESEJA ALTERAR:\n\t\t");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE O NOME DO LIVRO QUE DESEJA ALTERAR:");
     gets(LIVROAT);
     setbuf(stdin,NULL);
     pr=fopen("CAD.dat","rb+");
@@ -159,15 +161,15 @@ void editar(LIVRO *a)
         se=fseek(pr,0,SEEK_CUR);
         if(strcmp(LIVROAT,(a->NLIVRO))==0)
         {
-            printf("\n\t\tNOVO CODIGO DO LIVRO:\n\t\t");
+            printf("\t\t NOVO CODIGO DO LIVRO:");
             gets(a->CLIVRO);
             setbuf(stdin,NULL);
-            printf("\t\tNOVO NOME DO LIVRO:\n\t\t");
+            printf("\t\t NOVO NOME DO LIVRO:");
             gets(a->NLIVRO);
             setbuf(stdin,NULL);
-            printf("\t\t NOVO AUTOR DO LIVRO:\n\t\t");
+            printf("\t\t NOVO AUTOR DO LIVRO:");
             gets(a->ALIVRO);
-            printf("\t\t NOVA QUANTIDADE DE EXEMPLARES:\n\t\t");
+            printf("\t\t NOVA QUANTIDADE DE EXEMPLARES:");
             scanf("%d",&a->Quant);
             setbuf(stdin,NULL);
             fseek(pr,ftell(pr)-sizeof(*a),SEEK_SET);
@@ -183,22 +185,22 @@ void lista(LIVRO *a)
 
     while(fread(a,sizeof(*a),1,pr)==1)
     {
-        printf(" AUTOR DO LIVRO:%s\n",(a->ALIVRO));
-        printf(" CODIGO DO LIVRO:%s\n",(a->CLIVRO));
-        printf(" NOME DO LIVRO:%s\n",(a->NLIVRO));
-        printf(" AREA DO LIVROO:%s\n",(a->area));
-        printf(" QUANTIDADE DISPONIVEL:%d\n",(a->Quant));
-        printf("\n");
+        printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\t AUTOR DO LIVRO:%s\n",(a->ALIVRO));
+        printf("\t\t CODIGO DO LIVRO:%s\n",(a->CLIVRO));
+        printf("\t\t NOME DO LIVRO:%s\n",(a->NLIVRO));
+        printf("\t\t AREA DO LIVROO:%s\n",(a->area));
+        printf("\t\t QUANTIDADE DISPONIVEL:%d\n",(a->Quant));
     }
     fclose(pr);
-    system("Pause");
 }
 void remover(LIVRO *a)
 {
     FILE *pt;
     char RMLIVRO[100];
     pt=fopen("rem.dat","w+b");
-    printf("DIGITE O NOME DO LIVRO QUE DESEJA REMOVER DO ACERVO.");
+    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE O NOME DO LIVRO QUE DESEJA REMOVER:");
     setbuf(stdin,NULL);
     gets(RMLIVRO);
     setbuf(stdin,NULL);
@@ -220,13 +222,14 @@ void cadastroALUNO(ALUNO *a)
 {
     pr=fopen("ALUNO.dat","ab+");
     setbuf(stdin,NULL);
-    printf("\t\tDIGITE O NOME DO ALUNO:\n\t\t");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tDIGITE O NOME DO ALUNO:");
     gets(a->Nome);
     setbuf(stdin,NULL);
-    printf("\t\tDIGITE A MATRICULA DO ALUNO:\n\t\t");
+    printf("\t\tDIGITE A MATRICULA DO ALUNO:");
     scanf("%d",&a->Cod_A);
     setbuf(stdin,NULL);
-    printf("\t\tDIGITE O CPF DO ALUNO:\n\t\t");
+    printf("\t\tDIGITE O CPF DO ALUNO:");
     scanf("%d",&a->CPF);
     setbuf(stdin,NULL);
     fwrite(a,sizeof(*a),1,pr);
@@ -238,21 +241,21 @@ void listaALUNO(ALUNO *a)
 
     while(fread(a,sizeof(*a),1,pr)==1)
     {
-
-        printf(" NOME DO ALUNO:%s\n",(a->Nome));
-        printf(" MATRICULA DO ALUNO:%d\n",(a->Cod_A));
-        printf(" CPF DO ALUNO:%d",(a->CPF));
+        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\t NOME DO ALUNO:%s",(a->Nome));
+        printf("\n\t\t MATRICULA DO ALUNO:%d",(a->Cod_A));
+        printf("\n\t\t CPF DO ALUNO:%d",(a->CPF));
         printf("\n");
     }
     fclose(pr);
-    system("Pause");
 }
 void editarALUNO(ALUNO *a)
 {
     char ALUNOAT[100];
     int se;
     setbuf(stdin,NULL);
-    printf("\t\t DIGITE O NOME DO ALUNO QUE DESEJA ALTERAR:\n\t\t");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tDIGITE O NOME DO ALUNO QUE DESEJA ALTERAR:");
     gets(ALUNOAT);
     setbuf(stdin,NULL);
     pr=fopen("ALUNO.dat","rb+");
@@ -261,13 +264,13 @@ void editarALUNO(ALUNO *a)
         se=fseek(pr,0,SEEK_CUR);
         if(strcmp(ALUNOAT,(a->Nome))==0)
         {
-            printf("\n\t\tNOVO NOME DO ALUNO:\n\t\t");
+            printf("\t\tNOVO NOME DO ALUNO:");
             gets(a->Nome);
             setbuf(stdin,NULL);
-            printf("\t\tNOVA MATRICULA DO ALUNO:\n\t\t");
+            printf("\t\tNOVA MATRICULA DO ALUNO:");
             scanf("%d",&a->Cod_A);
             setbuf(stdin,NULL);
-            printf("\t\t NOVO CPF DO ALUNO:\n\t\t");
+            printf("\t\tNOVO CPF DO ALUNO:");
             scanf("%d",&a->CPF);
             setbuf(stdin,NULL);
             fseek(pr,ftell(pr)-sizeof(*a),SEEK_SET);
@@ -282,7 +285,8 @@ void removerALUNO(ALUNO *a)
     FILE *pt;
     char RMALUNO[100];
     pt=fopen("rema.dat","w+b");
-    printf("DIGITE O NOME DO ALUNO QUE DESEJA REMOVER.");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE O NOME DO ALUNO QUE DESEJA REMOVER:");
     setbuf(stdin,NULL);
     gets(RMALUNO);
     setbuf(stdin,NULL);
@@ -455,6 +459,11 @@ main()
                 case 1:
                 {
                     cadastro (&a);
+
+                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                 CADASTRO REALIZADO.               °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system("cls");
                     break;
                     carregar();
@@ -463,6 +472,10 @@ main()
                 case 2:
                 {
                     editar(&a);
+                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                    LIVRO EDITADO.                 °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system("cls");
                 }
                 break;
@@ -470,6 +483,10 @@ main()
                 case 3:
                 {
                     remover(&a);
+                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                     LIVRO REMOVIDO                °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system("cls");
                     carregar();
                 }
@@ -478,6 +495,10 @@ main()
                 case 4:
                 {
                     lista(&a);
+                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                   LISTA FINALIZADA                °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    system("pause");
                     system("cls");
                 }
                 break;
@@ -500,12 +521,17 @@ main()
                 menuaalunos();
                 scanf("%d",&opcao2);
                 system("cls");
+                system("cls");
                 carregar();
                 switch (opcao2)
                 {
                 case 1:
                 {
                     cadastroALUNO(&b);
+                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                 CADASTRO REALIZADO.               °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system("cls");
                 }
                 break;
@@ -513,6 +539,10 @@ main()
                 case 2:
                 {
                     removerALUNO(&b);
+                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                     ALUNO REMOVIDO                °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system ("cls");
                     carregar();
                 }
@@ -520,13 +550,22 @@ main()
                 case 3:
                 {
                     editarALUNO(&b);
+                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                    ALUNO EDITADO.                 °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system("cls");
+                    carregar();
                 }
                 break;
                 carregar();
                 case 4:
                 {
                     listaALUNO(&b);
+                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                   LISTA FINALIZADA                °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    system("pause");
                     system("cls");
                 }
                 break;

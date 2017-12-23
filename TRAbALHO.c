@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdlib.h>
 #include <TIME.H>
+#include <conio.h>
+
 FILE *pr;
 void  sleep(time_t delay)
 {
@@ -19,9 +21,8 @@ void menuemprestimo()
            "\t\t°              EMPRESTIMOS                    °\n"
            "\t\t°              1. NOVO EMPRESTIMO             °\n"
            "\t\t°              2. CONFIRMAR DEVOLUCAO         °\n"
-           "\t\t°              3. CANCELAR EMPRESTIMO         °\n"
-           "\t\t°              4. LISTAR EMPRESTIMOS          °\n"
-           "\t\t°              5. VOLTAR                      °\n"
+           "\t\t°              3. LISTAR EMPRESTIMOS          °\n"
+           "\t\t°              4. VOLTAR                      °\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°                                             °\n"
@@ -117,9 +118,9 @@ typedef struct  //ALUNO
 } ALUNO;
 typedef struct  //EMPRESTIMO
 {
-    char CODELIVRO[50];
-    int CODEALUNO;
-    char NOMELIVRO[100];
+    char EMPCL[50];
+    int EMPCA;
+    char EMPNL[100];
     int DATE;
     int DTDEV;
 } EMPRESTIMO;
@@ -304,24 +305,20 @@ void removerALUNO(ALUNO *a)
     fclose(pt);
     rename("rema.dat","ALUNO.dat");
 }
-void novoemprestimo(ALUNO *a,LIVRO *c,EMPRESTIMO *d)
+void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
 {
-    FILE *ph;
-    FILE *pt;
-    FILE *pr;
+    FILE *ph; //emp
+    FILE *pt; //aluno
+    FILE *pr; // livro
     int cod,i=0,j=0;
-    char CODE_LIVRO[50];
+    char CODEDIG[50];
     printf("DIGITE SUA MATRICULA");
     scanf("%d",&cod);
     setbuf(stdin,NULL);
     ph=fopen("EMPRESTIMO.dat","w+b");
-    pr=fopen("CAD.dat","r+b");
-    pt=fopen("LIVRO.dat","r+b");
-    rewind(pr);
-    while(fread(a,sizeof(*a),1,pr)==1)
+    pt=fopen("ALUNO.dat","rb");
+    while(fread(a,sizeof(*a),1,pt)==1)
     {
-        printf("%d\n%d",cod,a->Cod_A);
-        system("pause");
         if(cod==a->Cod_A)
         {
             i++;
@@ -336,19 +333,21 @@ void novoemprestimo(ALUNO *a,LIVRO *c,EMPRESTIMO *d)
     {
         i=0;
         printf("DIGITE O CODIGO DO LIVRO\n");
-        gets(CODE_LIVRO);
+        gets(CODEDIG);
         setbuf(stdin,NULL);
-        while(fread(c,sizeof(*c),1,pt)==1)
+        pr=fopen("CAD.dat","rb");
+        while(fread(b,sizeof(*b),1,pr)==1)
         {
-            if(strcmp(CODE_LIVRO,c->CLIVRO))
+            if(strcmp(CODEDIG,b->CLIVRO)==0)
             {
                 i++;
-                j=c->Quant;
+                j=b->Quant;
             }
+         fclose(pr);
         }
         if(i==0)
         {
-            printf("ALUNO NAO CADASTRADO\n");
+            printf("LIVRO NAO CADASTRADO\n");
         }
         else
         {
@@ -359,9 +358,9 @@ void novoemprestimo(ALUNO *a,LIVRO *c,EMPRESTIMO *d)
             else
             {
                 i=0;
-                while(fread(d,sizeof(*d),1,ph)==1)
+                while(fread(c,sizeof(*c),1,ph)==1)
                 {
-                    if(cod==d->CODEALUNO)
+                    if(cod==c->EMPCA)
                     {
                         i++;
                     }
@@ -374,9 +373,9 @@ void novoemprestimo(ALUNO *a,LIVRO *c,EMPRESTIMO *d)
                 {
                     i=0;
                     rewind(ph);
-                    while(fread(d,sizeof(*d),1,ph)==1)
+                    while(fread(c,sizeof(*c),1,ph)==1)
                     {
-                        if(strcmp(CODE_LIVRO,d->CODELIVRO))
+                        if(strcmp(CODEDIG,c->EMPCL))
                         {
                             i++;
                         }
@@ -390,33 +389,37 @@ void novoemprestimo(ALUNO *a,LIVRO *c,EMPRESTIMO *d)
                         rewind(ph);
                         rewind(pr);
                         rewind(pt);
-                        while(fread(c,sizeof(*c),1,pt)==1)
+                        while(fread(c,sizeof(*c),1,ph)==1)
                         {
-                            if(strcmp(CODE_LIVRO,c->CLIVRO)==0)
+                            if(strcmp(CODEDIG,b->CLIVRO)==0)
                             {
-                                strcpy(d->CODELIVRO,CODE_LIVRO);
-                                strcpy(d->NOMELIVRO,c->NLIVRO);
-                                d->CODEALUNO=cod;
+                                strcpy(c->EMPCL,CODEDIG);
+                                strcpy(c->EMPNL,b->NLIVRO);
+                                c->EMPCA=cod;
+                                fwrite(ph,sizeof(*c),1,pr);
                             }
                         }
                         j=0;
                         i=0;
-                        printf("VOCE DESEJA REALIZAR O EMPRESTIMO? Sim=1,Nao=2");
+                        printf("VOCE DESEJA REALIZAR O EMPRESTIMO? Sim=1,Nao=2: ");
                         scanf("%d",&i);
                         if(i=1)
                         {
-                            rewind(pt);
-                            while(fread(c,sizeof(*c),1,pt)==1)
+                            pr=fopen("CAD.dat","ab");
+                            rewind(pr);
+                            while(fread(b,sizeof(*b),1,pr)==1)
                             {
-                                j=fseek(pt,0,SEEK_CUR);
-                                if(strcmp(CODE_LIVRO,c->CLIVRO)==0)
+                                j=fseek(pr,0,SEEK_CUR);
+                                if(strcmp(CODEDIG,b->CLIVRO)==0)
                                 {
-                                    c->Quant=c->Quant-1;
-                                    fseek(pt,j,SEEK_SET);
-                                    fwrite(pt,sizeof(*c),1,pt);
-                                    fseek(pt,0, SEEK_END);
+                                    printf("ENTRO AQUI\n");
+                                    b->Quant=b->Quant-1;
+                                    fseek(pr,j,SEEK_SET);
+                                    fwrite(pr,sizeof(*b),1,pr);
+                                    fseek(pr,0, SEEK_END);
                                 }
                             }
+                            printf(" \n EMPRESTIMO REALIZADO \n");
                         }
 
                     }
@@ -430,9 +433,23 @@ void novoemprestimo(ALUNO *a,LIVRO *c,EMPRESTIMO *d)
     fclose(pr);
     system("pause");
 }
+void listaremprestimo(EMPRESTIMO *c)
+{
+    FILE *ph;
+    ph=fopen("EMPRESTIMO.dat","rb+");
+
+    while(fread(c,sizeof(*c),1,ph)==1)
+    {
+        printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\t MATRICULA DO ALUNO:%s\n",(c->EMPCA));
+        printf("\t\t CODIGO DO LIVRO:%s\n",(c->EMPCL));
+        printf("\t\t NOME DO LIVRO:%s\n",(c->EMPNL));
+    }
+    fclose(ph);
+}
 main()
 {
-    int opcao,opcao2,erro;
+    int opcao,opcao2,opcao3,erro;
     do
     {
         menu();
@@ -605,25 +622,21 @@ main()
                 break;
                 case 3:
                 {
-                    printf("CANCELAR EMPRESTIMO\n");
-                    system("cls");
-                }
-                break;
-                case 4:
-                {
                     do
                     {
                         listaemprestimo();
-                        scanf("%d",&opcao2);
+                        scanf("%d",&opcao3);
                         system("cls");
-                        switch(opcao2)
+                        switch(opcao3)
                         {
                         case 1:
                         {
-                            printf("LISTAR EMPRESTIMOS\n");
+                            listaremprestimo(&c);
                             system("cls");
+                            carregar();
                         }
                         break;
+                        carregar();
                         case 2:
                         {
                             printf("LISTAR POR LIVRO:\n");
@@ -638,19 +651,19 @@ main()
                         break;
                         case 4:
                         {
-                            printf("VOLTAR");
                             system("cls");
                             break;
+                            carregar();
                         }
                         }
                     }
-                    while(opcao2!=0);
+                    while(opcao3>=1&&opcao3<4);
                 }
 
-                case 5:
+                case 4:
                 {
-                    printf("VOLTAR\n");
                     system("cls");
+                    carregar();
                 }
                 break;
                 }
@@ -658,7 +671,7 @@ main()
 
 
             }
-            while(opcao2>=1&&opcao2<5);
+            while(opcao2>=1&&opcao2<4);
         }
         case 4:
         {

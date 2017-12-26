@@ -5,7 +5,74 @@
 #include <conio.h>
 
 FILE *pr;
-void  sleep(time_t delay)
+int horario(da,ms,ao) //funçao disponivel em
+//pt.stackoverflow.com/questions/158195/como-pegar-hora-do-sistema-e-guardar-em-uma-vari%C3%A1vel
+{
+  time_t timer;
+  struct tm *horarioLocal;
+
+  time(&timer);
+  horarioLocal = localtime(&timer);
+
+  int dia = horarioLocal->tm_mday;
+  int mes = horarioLocal->tm_mon + 1;
+  int ano = horarioLocal->tm_year + 1900;
+
+  int hora = horarioLocal->tm_hour;
+  int min  = horarioLocal->tm_min;
+  int sec  = horarioLocal->tm_sec;
+printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+printf("\t\tDATA DO EMPRESTIMO: %d/%d/%d\n",dia,mes,ano);
+
+  return dia,mes,ano;
+}
+int horariodev(da,ms,ao) //EDITADO funçao disponivel em
+//pt.stackoverflow.com/questions/158195/como-pegar-hora-do-sistema-e-guardar-em-uma-vari%C3%A1vel
+{
+  time_t timer;
+  struct tm *horarioLocal;
+
+  time(&timer);
+  horarioLocal = localtime(&timer);
+
+  int dia = horarioLocal->tm_mday+15;
+  int mes = horarioLocal->tm_mon + 1;
+  int ano = horarioLocal->tm_year + 1900;
+
+    if(mes>=12){
+    mes=(mes-12)+1;
+    ano=ano+1;}
+    else {
+    if((mes==1||mes==3||mes==5||mes==7||mes==8||mes==10||mes==12)&&dia>31){
+    dia=dia-31;
+  }
+  if((mes==4||mes==6||mes==9||mes==11)&&dia>30){
+    dia=dia-30;
+  }
+  if((mes==2)&&dia>28){
+    dia=dia-28;
+  }
+      }
+  if((mes==1||mes==3||mes==5||mes==7||mes==8||mes==10||mes==12)&&dia>31){
+    dia=dia-31;
+  }
+  if((mes==4||mes==6||mes==9||mes==11)&&dia>30){
+    dia=dia-30;
+  }
+  if((mes==2)&&dia>28){
+    dia=dia-28;
+  }
+
+
+  int hora = horarioLocal->tm_hour;
+  int min  = horarioLocal->tm_min;
+  int sec  = horarioLocal->tm_sec;
+printf("\t\tDATA DA DEVOLUÇAO: %d/%d/%d\n",dia,mes,ano);
+
+  return dia,mes,ano;
+}
+void  sleep(time_t delay) //Disponivel em
+//pt.wikihow.com/Fazer-um-Delay-em-C
 {
     time_t timer0,timer1;
     time(&timer0);
@@ -15,7 +82,7 @@ void  sleep(time_t delay)
     }
     while((timer1-timer0)<delay);
 }
-void menuemprestimo()
+void menuemprestimo() //VISUAL DO MENU
 {
     printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°              EMPRESTIMOS                    °\n"
@@ -30,7 +97,7 @@ void menuemprestimo()
            "\t\t°                                             °\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
 }
-void listaemprestimo()
+void listaemprestimo() //VISUAl DO MENU
 {
     printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°              LISTAR EMPRESTIMOS POR:        °\n"
@@ -45,7 +112,7 @@ void listaemprestimo()
            "\t\t°                                             °\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
 }
-void menu()
+void menu() //VISUAl DO MENU
 {
     printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°              MENU DE OPCOES                 °\n"
@@ -60,7 +127,7 @@ void menu()
            "\t\t°                                             °\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
 }
-void menuacervo()
+void menuacervo() //VISUAL DO MENU
 {
     printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°                   ACERVO                    °\n"
@@ -76,7 +143,7 @@ void menuacervo()
            "\t\t°                                             °\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
 }
-void menuaalunos()
+void menuaalunos() //VISUAL DO MENU
 {
     printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°                   ALUNOS                    °\n"
@@ -92,7 +159,7 @@ void menuaalunos()
            "\t\t°                                             °\n"
            "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
 }
-void carregar()
+void carregar() //FUNÇAO PARA CRIAR  O DELAY
 {
     printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
            "\t\t°                                             °\n"
@@ -121,10 +188,8 @@ typedef struct  //EMPRESTIMO
     char EMPCL[50];
     int EMPCA;
     char EMPNL[100];
-    int DATE;
-    int DTDEV;
 } EMPRESTIMO;
-void cadastro(LIVRO *a)
+void cadastro(LIVRO *a)// CADASTRO DO LIVRO
 {
     pr=fopen("CAD.dat","ab+");
     setbuf(stdin,NULL);
@@ -143,11 +208,10 @@ void cadastro(LIVRO *a)
     setbuf(stdin,NULL);
     printf("\t\tAREA DE CONHECIMENTO:");
     gets(a->area);
-    setbuf(stdin,NULL);
     fwrite(a,sizeof(*a),1,pr);
     fclose(pr);
 }
-void editar(LIVRO *a)
+void editar(LIVRO *a) //EDIÇAO DO LIVRO
 {
     char LIVROAT[100];
     int se;
@@ -180,7 +244,7 @@ void editar(LIVRO *a)
     }
     fclose(pr);
 }
-void lista(LIVRO *a)
+void lista(LIVRO *a) //LISTAR OS LIVRO
 {
     pr=fopen("CAD.dat","rb+");
 
@@ -195,7 +259,7 @@ void lista(LIVRO *a)
     }
     fclose(pr);
 }
-void remover(LIVRO *a)
+void remover(LIVRO *a) //REMOÇAO DO LIVRO
 {
     FILE *pt;
     char RMLIVRO[100];
@@ -219,7 +283,7 @@ void remover(LIVRO *a)
     fclose(pt);
     rename("rem.dat","CAD.dat");
 }
-void cadastroALUNO(ALUNO *a)
+void cadastroALUNO(ALUNO *a) //CADASTRO DO ALUNO
 {
     pr=fopen("ALUNO.dat","ab+");
     setbuf(stdin,NULL);
@@ -236,7 +300,7 @@ void cadastroALUNO(ALUNO *a)
     fwrite(a,sizeof(*a),1,pr);
     fclose(pr);
 }
-void listaALUNO(ALUNO *a)
+void listaALUNO(ALUNO *a)//LISTAR ALUNO
 {
     pr=fopen("ALUNO.dat","rb+");
 
@@ -250,7 +314,7 @@ void listaALUNO(ALUNO *a)
     }
     fclose(pr);
 }
-void editarALUNO(ALUNO *a)
+void editarALUNO(ALUNO *a)// EDICAO DO ALUNO
 {
     char ALUNOAT[100];
     int se;
@@ -281,7 +345,7 @@ void editarALUNO(ALUNO *a)
     }
     fclose(pr);
 }
-void removerALUNO(ALUNO *a)
+void removerALUNO(ALUNO *a) //REMOVER ALUNo
 {
     FILE *pt;
     char RMALUNO[100];
@@ -305,17 +369,17 @@ void removerALUNO(ALUNO *a)
     fclose(pt);
     rename("rema.dat","ALUNO.dat");
 }
-void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
+void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)//REALIZAR EMPRESTIMO
 {
     FILE *ph; //emp
     FILE *pt; //aluno
     FILE *pr; // livro
-    int cod,i=0,j=0;
+    int cod,i=0,j=0,d=0,m=0,n=0;
     char CODEDIG[50];
-    printf("DIGITE SUA MATRICULA");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tDIGITE SUA MATRICULA\n\t\t");
     scanf("%d",&cod);
     setbuf(stdin,NULL);
-    ph=fopen("EMPRESTIMO.dat","w+b");
     pt=fopen("ALUNO.dat","rb");
     while(fread(a,sizeof(*a),1,pt)==1)
     {
@@ -325,14 +389,17 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
         }
 
     }
+    fclose(pt);
     if(i==0)
     {
-        printf("ALUNO NAO CADASTRADO\n");
+        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\tALUNO NAO CADASTRADO\n");
     }
     else
     {
         i=0;
-        printf("DIGITE O CODIGO DO LIVRO\n");
+        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\tDIGITE O CODIGO DO LIVRO\n\t\t");
         gets(CODEDIG);
         setbuf(stdin,NULL);
         pr=fopen("CAD.dat","rb");
@@ -343,20 +410,23 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
                 i++;
                 j=b->Quant;
             }
-         fclose(pr);
         }
+        fclose(pr);
         if(i==0)
         {
-            printf("LIVRO NAO CADASTRADO\n");
+            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\t\t LIVRO NAO CADASTRADO\n");
         }
         else
         {
             if(j==0)
             {
-                printf("NAO TEM LIVRO DISPONIVEL\n");
+                printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                printf("\t\tNAO TEM LIVRO DISPONIVEL\n");
             }
             else
             {
+                ph=fopen("EMPRESTIMO.dat","rb");
                 i=0;
                 while(fread(c,sizeof(*c),1,ph)==1)
                 {
@@ -365,14 +435,17 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
                         i++;
                     }
                 }
+                fclose(ph);
                 if(i>=2)
                 {
-                    printf("ALUNO POSSUI ACIMA DE 1 EMPRESTIMO\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\tALUNO POSSUI ACIMA DE 1 EMPRESTIMO\n");
                 }
                 else
                 {
                     i=0;
                     rewind(ph);
+                    ph=fopen("EMPRESTIMO.dat","w+b");
                     while(fread(c,sizeof(*c),1,ph)==1)
                     {
                         if(strcmp(CODEDIG,c->EMPCL))
@@ -380,47 +453,42 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
                             i++;
                         }
                     }
+                    fclose(ph);
                     if(i>=2)
                     {
-                        printf("ALUNO POSSUI ESSE LIVRO\n");
+                        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                        printf("\t\tALUNO POSSUI ESSE LIVRO\n");
                     }
                     else
                     {
+                        ph=fopen("EMPRESTIMO.dat","wb");
                         rewind(ph);
                         rewind(pr);
                         rewind(pt);
-                        while(fread(c,sizeof(*c),1,ph)==1)
+                        while(fread(c,sizeof(*c),1,ph)==0)
                         {
                             if(strcmp(CODEDIG,b->CLIVRO)==0)
                             {
                                 strcpy(c->EMPCL,CODEDIG);
                                 strcpy(c->EMPNL,b->NLIVRO);
                                 c->EMPCA=cod;
-                                fwrite(ph,sizeof(*c),1,pr);
+                                horario(d,m,n);
+                                fwrite(c,sizeof(*c),1,ph);
                             }
                         }
+                        fclose(ph);
                         j=0;
-                        i=0;
-                        printf("VOCE DESEJA REALIZAR O EMPRESTIMO? Sim=1,Nao=2: ");
-                        scanf("%d",&i);
-                        if(i=1)
-                        {
                             pr=fopen("CAD.dat","ab");
-                            rewind(pr);
                             while(fread(b,sizeof(*b),1,pr)==1)
                             {
                                 j=fseek(pr,0,SEEK_CUR);
                                 if(strcmp(CODEDIG,b->CLIVRO)==0)
                                 {
-                                    printf("ENTRO AQUI\n");
-                                    b->Quant=b->Quant-1;
-                                    fseek(pr,j,SEEK_SET);
-                                    fwrite(pr,sizeof(*b),1,pr);
+                                    b->Quant=(b->Quant)-1;
+                                    fwrite(b,sizeof(*b),1,pr);
                                     fseek(pr,0, SEEK_END);
                                 }
                             }
-                            printf(" \n EMPRESTIMO REALIZADO \n");
-                        }
 
                     }
                 }
@@ -431,23 +499,94 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)
     fclose(pt);
     fclose(ph);
     fclose(pr);
-    system("pause");
 }
-void listaremprestimo(EMPRESTIMO *c)
+void listaremprestimo(EMPRESTIMO *c) //LISTAR EMPRESTIMO
 {
+    int d,m,a,dd,dm,da;
     FILE *ph;
     ph=fopen("EMPRESTIMO.dat","rb+");
 
     while(fread(c,sizeof(*c),1,ph)==1)
     {
         printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-        printf("\t\t MATRICULA DO ALUNO:%s\n",(c->EMPCA));
+        printf("\t\t MATRICULA DO ALUNO:%d\n",(c->EMPCA));
         printf("\t\t CODIGO DO LIVRO:%s\n",(c->EMPCL));
         printf("\t\t NOME DO LIVRO:%s\n",(c->EMPNL));
+        horario(d,m,a);
+        horariodev(dd,dm,da);
     }
     fclose(ph);
 }
-main()
+void listaremprestimoLIVRO(EMPRESTIMO *c)// LISTAR EMPRESTIMO POR LIVRO
+{
+FILE *pr;
+char LIVRONOVO[100];
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE O LIVRO QUE DESEJA LISTAR:\t\t");
+    setbuf(stdin,NULL);
+    gets(LIVRONOVO);
+    setbuf(stdin,NULL);
+    pr=fopen("EMPRESTIMO.dat","rb");
+    while(fread(c,sizeof(*c),1,pr)==1){
+    if(strcmp(LIVRONOVO,c->EMPNL)==0){
+        printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\t MATRICULA DO ALUNO:%d\n",(c->EMPCA));
+        printf("\t\t CODIGO DO LIVRO : %s\n",(c->EMPCL));
+        printf("\t\t NOME DO LIVRO EMPRESTADO:%s\n",(c->EMPNL));
+    }
+    }
+    fclose(pr);
+}
+void listaremprestimoALUNO(EMPRESTIMO *c) //LISTAR EMPRESTIMO POR ALUNO
+{
+FILE *ph;
+int MATNOVO;
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE A MATRICULA DO ALUNO QUE DESEJA LISTAR:");
+    setbuf(stdin,NULL);
+    scanf("%d",&MATNOVO);
+    setbuf(stdin,NULL);
+    ph=fopen("EMPRESTIMO.dat","rb");
+    while(fread(c,sizeof(*c),1,ph)==1){
+    if(MATNOVO==(c->EMPCA)){
+        printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\t MATRICULA DO ALUNO:%d\n",(c->EMPCA));
+        printf("\t\t CODIGO DO LIVRO : %s\n",(c->EMPCL));
+        printf("\t\t NOME DO LIVRO EMPRESTADO:%s\n",(c->EMPNL));
+    }
+    }
+    fclose(ph);
+}
+void removerEMPRESTIMO(EMPRESTIMO *c) //REMOVER LIVRO
+{
+    FILE *ph;
+    FILE *pt;
+    char RMEMPRESTIMO[100];
+    int CALUN;
+    pt=fopen("remo.dat","w+b");
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE O  CODIGO DO ALUNO:\n\t\t");
+    setbuf(stdin,NULL);
+    scanf("%d",&CALUN);
+    setbuf(stdin,NULL);
+    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\t DIGITE O NOME DO LIVRO:\n\t\t");
+    setbuf(stdin,NULL);
+    gets(RMEMPRESTIMO);
+    setbuf(stdin,NULL);
+    ph=fopen("EMPRESTIMO.dat","r+b");
+    rewind(ph);
+    while(fread(c,sizeof(*c),1,ph)==1)
+    {
+        if(CALUN==c->EMPCA&&(strcmp(RMEMPRESTIMO,c->EMPCL)!=0))
+         fwrite(c,sizeof(*c),1,pt);
+        }
+    fclose(ph);
+    remove("EMPRESTIMO.dat");
+    fclose(pt);
+    rename("remo.dat","EMPRESTIMO.dat");
+}
+main() //FUNÇAO MAIN
 {
     int opcao,opcao2,opcao3,erro;
     do
@@ -459,6 +598,7 @@ main()
         scanf("%d",&opcao);
         system("cls");
         carregar();
+        if(opcao>=1&&opcao<=4){
         switch(opcao)
         {
 
@@ -529,6 +669,12 @@ main()
                 }
             }
             while(opcao2>=1&&opcao2<5);
+            if(opcao2<=1&&opcao2>5){
+            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\t\t°                   OPCAO INVALIDA                  °\n");
+            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            sleep(2);}
+            system("cls");
         }
         break;
         case 2:
@@ -596,6 +742,12 @@ main()
                 }
             }
             while(opcao2>=1&&opcao2<5);
+            if(opcao2<=1&&opcao2>5){
+            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\t\t°                   OPCAO INVALIDA                  °\n");
+            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            sleep(2);}
+            system("cls");
         }
         case 3:
         {
@@ -610,14 +762,23 @@ main()
                 case 1:
                 {
                     novoemprestimo(&b,&a,&c);
+                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                   EMPRESTIMO REALIZADO            °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            sleep(2);
                     system("cls");
                     carregar();
                 }
                 break;
                 case 2:
                 {
-                    printf("CONFIRMAR DEVOLUCAO\n");
+                    removerEMPRESTIMO(&c);
+                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\t°                 EMPRESTIMO CANCELADO              °\n");
+                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    sleep(2);
                     system("cls");
+                    carregar();
                 }
                 break;
                 case 3:
@@ -632,6 +793,11 @@ main()
                         case 1:
                         {
                             listaremprestimo(&c);
+                            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            printf("\t\t°                   LISTA FINALIZADA                °\n");
+                            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            sleep(2);
+                            system("pause");
                             system("cls");
                             carregar();
                         }
@@ -639,14 +805,25 @@ main()
                         carregar();
                         case 2:
                         {
-                            printf("LISTAR POR LIVRO:\n");
+                            listaremprestimoLIVRO(&c);
+                            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            printf("\t\t°                   LISTA FINALIZADA                °\n");
+                            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            sleep(2);
+                            system("pause");
                             system("cls");
                         }
                         break;
                         case 3:
                         {
-                            printf("LISTAR POR ALUNOS\n");
+                            listaremprestimoALUNO(&c);
+                            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            printf("\t\t°                   LISTA FINALIZADA                °\n");
+                            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            sleep(2);
+                            system("pause");
                             system("cls");
+                            carregar();
                         }
                         break;
                         case 4:
@@ -658,6 +835,7 @@ main()
                         }
                     }
                     while(opcao3>=1&&opcao3<4);
+
                 }
 
                 case 4:
@@ -684,5 +862,13 @@ main()
 
 
     }
-    while(opcao>=1&&opcao<4);
+
+    else{
+            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\t\t°                   OPCAO INVALIDA                  °\n");
+            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            sleep(2);}
+}
+while(opcao>=1&&opcao<4);
+
 }

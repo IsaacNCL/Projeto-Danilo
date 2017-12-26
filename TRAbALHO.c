@@ -5,7 +5,7 @@
 #include <conio.h>
 
 FILE *pr;
-int horario(da,ms,ao) //funçao disponivel em
+int horario(da,ms,ao) //EDITADO funçao disponivel em
 //pt.stackoverflow.com/questions/158195/como-pegar-hora-do-sistema-e-guardar-em-uma-vari%C3%A1vel
 {
   time_t timer;
@@ -71,7 +71,7 @@ printf("\t\tDATA DA DEVOLUÇAO: %d/%d/%d\n",dia,mes,ano);
 
   return dia,mes,ano;
 }
-void  sleep(time_t delay) //Disponivel em
+void  sleep(time_t delay) // EDITADO Disponivel em
 //pt.wikihow.com/Fazer-um-Delay-em-C
 {
     time_t timer0,timer1;

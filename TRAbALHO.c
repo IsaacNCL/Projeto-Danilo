@@ -5,7 +5,7 @@
 #include <conio.h>
 
 FILE *pr;
-int horario(da,ms,ao) //funçao disponivel em
+int horario(da,ms,ao) //funÃ§ao disponivel em
 //pt.stackoverflow.com/questions/158195/como-pegar-hora-do-sistema-e-guardar-em-uma-vari%C3%A1vel
 {
   time_t timer;
@@ -21,12 +21,12 @@ int horario(da,ms,ao) //funçao disponivel em
   int hora = horarioLocal->tm_hour;
   int min  = horarioLocal->tm_min;
   int sec  = horarioLocal->tm_sec;
-printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
 printf("\t\tDATA DO EMPRESTIMO: %d/%d/%d\n",dia,mes,ano);
 
   return dia,mes,ano;
 }
-int horariodev(da,ms,ao) //EDITADO funçao disponivel em
+int horariodev(da,ms,ao) //EDITADO funÃ§ao disponivel em
 //pt.stackoverflow.com/questions/158195/como-pegar-hora-do-sistema-e-guardar-em-uma-vari%C3%A1vel
 {
   time_t timer;
@@ -67,7 +67,7 @@ int horariodev(da,ms,ao) //EDITADO funçao disponivel em
   int hora = horarioLocal->tm_hour;
   int min  = horarioLocal->tm_min;
   int sec  = horarioLocal->tm_sec;
-printf("\t\tDATA DA DEVOLUÇAO: %d/%d/%d\n",dia,mes,ano);
+printf("\t\tDATA DA DEVOLUÃ‡AO: %d/%d/%d\n",dia,mes,ano);
 
   return dia,mes,ano;
 }
@@ -84,88 +84,88 @@ void  sleep(time_t delay) //Disponivel em
 }
 void menuemprestimo() //VISUAL DO MENU
 {
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°              EMPRESTIMOS                    °\n"
-           "\t\t°              1. NOVO EMPRESTIMO             °\n"
-           "\t\t°              2. CONFIRMAR DEVOLUCAO         °\n"
-           "\t\t°              3. LISTAR EMPRESTIMOS          °\n"
-           "\t\t°              4. VOLTAR                      °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                                             °\n"
-           "\t\t°               DIGITE SUA OPCAO:             °\n"
-           "\t\t°                                             °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°              EMPRESTIMOS                    Â°\n"
+           "\t\tÂ°              1. NOVO EMPRESTIMO             Â°\n"
+           "\t\tÂ°              2. CONFIRMAR DEVOLUCAO         Â°\n"
+           "\t\tÂ°              3. LISTAR EMPRESTIMOS          Â°\n"
+           "\t\tÂ°              4. VOLTAR                      Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\n\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°               DIGITE SUA OPCAO:             Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\t\t\t\t");
 }
 void listaemprestimo() //VISUAl DO MENU
 {
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°              LISTAR EMPRESTIMOS POR:        °\n"
-           "\t\t°              1. LISTAR TODOS                °\n"
-           "\t\t°              2. LISTAR POR LIVRO            °\n"
-           "\t\t°              3. LISTAR POR ALUNO            °\n"
-           "\t\t°              4. VOLTAR                      °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                                             °\n"
-           "\t\t°               DIGITE SUA OPCAO:             °\n"
-           "\t\t°                                             °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°              LISTAR EMPRESTIMOS POR:        Â°\n"
+           "\t\tÂ°              1. LISTAR TODOS                Â°\n"
+           "\t\tÂ°              2. LISTAR POR LIVRO            Â°\n"
+           "\t\tÂ°              3. LISTAR POR ALUNO            Â°\n"
+           "\t\tÂ°              4. VOLTAR                      Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\n\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°               DIGITE SUA OPCAO:             Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\t\t\t\t");
 }
 void menu() //VISUAl DO MENU
 {
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°              MENU DE OPCOES                 °\n"
-           "\t\t°                1. ACERVO                    °\n"
-           "\t\t°                2. ALUNO                     °\n"
-           "\t\t°                3. EMPRESTIMO                °\n"
-           "\t\t°                4. SAIR                      °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\n\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                                             °\n"
-           "\t\t°               DIGITE SUA OPCAO:             °\n"
-           "\t\t°                                             °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°              MENU DE OPCOES                 Â°\n"
+           "\t\tÂ°                1. ACERVO                    Â°\n"
+           "\t\tÂ°                2. ALUNO                     Â°\n"
+           "\t\tÂ°                3. EMPRESTIMO                Â°\n"
+           "\t\tÂ°                4. SAIR                      Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\n\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°               DIGITE SUA OPCAO:             Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\t\t\t\t");
 }
 void menuacervo() //VISUAL DO MENU
 {
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                   ACERVO                    °\n"
-           "\t\t°             1. CADASTRAR LIVRO              °\n"
-           "\t\t°             2. EDITAR LIVRO                 °\n"
-           "\t\t°             3. REMOVER LIVRO                °\n"
-           "\t\t°             4. LISTA LIVROS                 °\n"
-           "\t\t°             5. VOLTAR                       °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                                             °\n"
-           "\t\t°               DIGITE SUA OPCAO:             °\n"
-           "\t\t°                                             °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                   ACERVO                    Â°\n"
+           "\t\tÂ°             1. CADASTRAR LIVRO              Â°\n"
+           "\t\tÂ°             2. EDITAR LIVRO                 Â°\n"
+           "\t\tÂ°             3. REMOVER LIVRO                Â°\n"
+           "\t\tÂ°             4. LISTA LIVROS                 Â°\n"
+           "\t\tÂ°             5. VOLTAR                       Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°               DIGITE SUA OPCAO:             Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\t\t\t\t");
 }
 void menuaalunos() //VISUAL DO MENU
 {
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                   ALUNOS                    °\n"
-           "\t\t°             1. CADASTRAR ALUNO              °\n"
-           "\t\t°             2. REMOVER ALUNO                °\n"
-           "\t\t°             3. EDITAR ALUNO                 °\n"
-           "\t\t°             4. LISTAR ALUNOS                °\n"
-           "\t\t°             5. VOLTAR                       °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                                             °\n"
-           "\t\t°               DIGITE SUA OPCAO:             °\n"
-           "\t\t°                                             °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                   ALUNOS                    Â°\n"
+           "\t\tÂ°             1. CADASTRAR ALUNO              Â°\n"
+           "\t\tÂ°             2. REMOVER ALUNO                Â°\n"
+           "\t\tÂ°             3. EDITAR ALUNO                 Â°\n"
+           "\t\tÂ°             4. LISTAR ALUNOS                Â°\n"
+           "\t\tÂ°             5. VOLTAR                       Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°               DIGITE SUA OPCAO:             Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\t\t\t\t");
 }
-void carregar() //FUNÇAO PARA CRIAR  O DELAY
+void carregar() //FUNÃ‡AO PARA CRIAR  O DELAY
 {
-    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n"
-           "\t\t°                                             °\n"
-           "\t\t°               LENDO OPCAO...                °\n"
-           "\t\t°                                             °\n"
-           "\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n\t\t\t\t");
+    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°               LENDO OPCAO...                Â°\n"
+           "\t\tÂ°                                             Â°\n"
+           "\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n\t\t\t\t");
     sleep(2);
     system("cls");
 }
@@ -193,7 +193,7 @@ void cadastro(LIVRO *a)// CADASTRO DO LIVRO
 {
     pr=fopen("CAD.dat","ab+");
     setbuf(stdin,NULL);
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\tDIGITE O CODIGO DO LIVRO:");
     gets(a->CLIVRO);
     setbuf(stdin,NULL);
@@ -211,12 +211,12 @@ void cadastro(LIVRO *a)// CADASTRO DO LIVRO
     fwrite(a,sizeof(*a),1,pr);
     fclose(pr);
 }
-void editar(LIVRO *a) //EDIÇAO DO LIVRO
+void editar(LIVRO *a) //EDIÃ‡AO DO LIVRO
 {
     char LIVROAT[100];
     int se;
     setbuf(stdin,NULL);
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE O NOME DO LIVRO QUE DESEJA ALTERAR:");
     gets(LIVROAT);
     setbuf(stdin,NULL);
@@ -250,7 +250,7 @@ void lista(LIVRO *a) //LISTAR OS LIVRO
 
     while(fread(a,sizeof(*a),1,pr)==1)
     {
-        printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\t AUTOR DO LIVRO:%s\n",(a->ALIVRO));
         printf("\t\t CODIGO DO LIVRO:%s\n",(a->CLIVRO));
         printf("\t\t NOME DO LIVRO:%s\n",(a->NLIVRO));
@@ -259,12 +259,12 @@ void lista(LIVRO *a) //LISTAR OS LIVRO
     }
     fclose(pr);
 }
-void remover(LIVRO *a) //REMOÇAO DO LIVRO
+void remover(LIVRO *a) //REMOÃ‡AO DO LIVRO
 {
     FILE *pt;
     char RMLIVRO[100];
     pt=fopen("rem.dat","w+b");
-    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE O NOME DO LIVRO QUE DESEJA REMOVER:");
     setbuf(stdin,NULL);
     gets(RMLIVRO);
@@ -287,7 +287,7 @@ void cadastroALUNO(ALUNO *a) //CADASTRO DO ALUNO
 {
     pr=fopen("ALUNO.dat","ab+");
     setbuf(stdin,NULL);
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\tDIGITE O NOME DO ALUNO:");
     gets(a->Nome);
     setbuf(stdin,NULL);
@@ -306,7 +306,7 @@ void listaALUNO(ALUNO *a)//LISTAR ALUNO
 
     while(fread(a,sizeof(*a),1,pr)==1)
     {
-        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\t NOME DO ALUNO:%s",(a->Nome));
         printf("\n\t\t MATRICULA DO ALUNO:%d",(a->Cod_A));
         printf("\n\t\t CPF DO ALUNO:%d",(a->CPF));
@@ -319,7 +319,7 @@ void editarALUNO(ALUNO *a)// EDICAO DO ALUNO
     char ALUNOAT[100];
     int se;
     setbuf(stdin,NULL);
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\tDIGITE O NOME DO ALUNO QUE DESEJA ALTERAR:");
     gets(ALUNOAT);
     setbuf(stdin,NULL);
@@ -350,7 +350,7 @@ void removerALUNO(ALUNO *a) //REMOVER ALUNo
     FILE *pt;
     char RMALUNO[100];
     pt=fopen("rema.dat","w+b");
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE O NOME DO ALUNO QUE DESEJA REMOVER:");
     setbuf(stdin,NULL);
     gets(RMALUNO);
@@ -376,7 +376,7 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)//REALIZAR EMPRESTIMO
     FILE *pr; // livro
     int cod,i=0,j=0,d=0,m=0,n=0;
     char CODEDIG[50];
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\tDIGITE SUA MATRICULA\n\t\t");
     scanf("%d",&cod);
     setbuf(stdin,NULL);
@@ -392,13 +392,13 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)//REALIZAR EMPRESTIMO
     fclose(pt);
     if(i==0)
     {
-        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\tALUNO NAO CADASTRADO\n");
     }
     else
     {
         i=0;
-        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\tDIGITE O CODIGO DO LIVRO\n\t\t");
         gets(CODEDIG);
         setbuf(stdin,NULL);
@@ -414,14 +414,14 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)//REALIZAR EMPRESTIMO
         fclose(pr);
         if(i==0)
         {
-            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
             printf("\t\t LIVRO NAO CADASTRADO\n");
         }
         else
         {
             if(j==0)
             {
-                printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                 printf("\t\tNAO TEM LIVRO DISPONIVEL\n");
             }
             else
@@ -438,7 +438,7 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)//REALIZAR EMPRESTIMO
                 fclose(ph);
                 if(i>=2)
                 {
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     printf("\t\tALUNO POSSUI ACIMA DE 1 EMPRESTIMO\n");
                 }
                 else
@@ -456,7 +456,7 @@ void novoemprestimo(ALUNO *a,LIVRO *b, EMPRESTIMO *c)//REALIZAR EMPRESTIMO
                     fclose(ph);
                     if(i>=2)
                     {
-                        printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                        printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                         printf("\t\tALUNO POSSUI ESSE LIVRO\n");
                     }
                     else
@@ -508,7 +508,7 @@ void listaremprestimo(EMPRESTIMO *c) //LISTAR EMPRESTIMO
 
     while(fread(c,sizeof(*c),1,ph)==1)
     {
-        printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\t MATRICULA DO ALUNO:%d\n",(c->EMPCA));
         printf("\t\t CODIGO DO LIVRO:%s\n",(c->EMPCL));
         printf("\t\t NOME DO LIVRO:%s\n",(c->EMPNL));
@@ -521,7 +521,7 @@ void listaremprestimoLIVRO(EMPRESTIMO *c)// LISTAR EMPRESTIMO POR LIVRO
 {
 FILE *pr;
 char LIVRONOVO[100];
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE O LIVRO QUE DESEJA LISTAR:\t\t");
     setbuf(stdin,NULL);
     gets(LIVRONOVO);
@@ -529,7 +529,7 @@ char LIVRONOVO[100];
     pr=fopen("EMPRESTIMO.dat","rb");
     while(fread(c,sizeof(*c),1,pr)==1){
     if(strcmp(LIVRONOVO,c->EMPNL)==0){
-        printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\t MATRICULA DO ALUNO:%d\n",(c->EMPCA));
         printf("\t\t CODIGO DO LIVRO : %s\n",(c->EMPCL));
         printf("\t\t NOME DO LIVRO EMPRESTADO:%s\n",(c->EMPNL));
@@ -541,7 +541,7 @@ void listaremprestimoALUNO(EMPRESTIMO *c) //LISTAR EMPRESTIMO POR ALUNO
 {
 FILE *ph;
 int MATNOVO;
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE A MATRICULA DO ALUNO QUE DESEJA LISTAR:");
     setbuf(stdin,NULL);
     scanf("%d",&MATNOVO);
@@ -549,7 +549,7 @@ int MATNOVO;
     ph=fopen("EMPRESTIMO.dat","rb");
     while(fread(c,sizeof(*c),1,ph)==1){
     if(MATNOVO==(c->EMPCA)){
-        printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+        printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
         printf("\t\t MATRICULA DO ALUNO:%d\n",(c->EMPCA));
         printf("\t\t CODIGO DO LIVRO : %s\n",(c->EMPCL));
         printf("\t\t NOME DO LIVRO EMPRESTADO:%s\n",(c->EMPNL));
@@ -564,12 +564,12 @@ void removerEMPRESTIMO(EMPRESTIMO *c) //REMOVER LIVRO
     char RMEMPRESTIMO[100];
     int CALUN;
     pt=fopen("remo.dat","w+b");
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE O  CODIGO DO ALUNO:\n\t\t");
     setbuf(stdin,NULL);
     scanf("%d",&CALUN);
     setbuf(stdin,NULL);
-    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
     printf("\t\t DIGITE O NOME DO LIVRO:\n\t\t");
     setbuf(stdin,NULL);
     gets(RMEMPRESTIMO);
@@ -578,7 +578,7 @@ void removerEMPRESTIMO(EMPRESTIMO *c) //REMOVER LIVRO
     rewind(ph);
     while(fread(c,sizeof(*c),1,ph)==1)
     {
-        if(CALUN==c->EMPCA&&(strcmp(RMEMPRESTIMO,c->EMPCL)!=0))
+        if(CALUN==c->EMPCA&&(strcmp(RMEMPRESTIMO,c->EMPCL)==0))
          fwrite(c,sizeof(*c),1,pt);
         }
     fclose(ph);
@@ -586,7 +586,7 @@ void removerEMPRESTIMO(EMPRESTIMO *c) //REMOVER LIVRO
     fclose(pt);
     rename("remo.dat","EMPRESTIMO.dat");
 }
-main() //FUNÇAO MAIN
+main() //FUNÃ‡AO MAIN
 {
     int opcao,opcao2,opcao3,erro;
     do
@@ -617,9 +617,9 @@ main() //FUNÇAO MAIN
                 {
                     cadastro (&a);
 
-                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                 CADASTRO REALIZADO.               °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                 CADASTRO REALIZADO.               Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system("cls");
                     break;
@@ -629,9 +629,9 @@ main() //FUNÇAO MAIN
                 case 2:
                 {
                     editar(&a);
-                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                    LIVRO EDITADO.                 °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                    LIVRO EDITADO.                 Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system("cls");
                 }
@@ -640,9 +640,9 @@ main() //FUNÇAO MAIN
                 case 3:
                 {
                     remover(&a);
-                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                     LIVRO REMOVIDO                °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                     LIVRO REMOVIDO                Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system("cls");
                     carregar();
@@ -652,9 +652,9 @@ main() //FUNÇAO MAIN
                 case 4:
                 {
                     lista(&a);
-                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                   LISTA FINALIZADA                °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                   LISTA FINALIZADA                Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     system("pause");
                     system("cls");
                 }
@@ -670,9 +670,9 @@ main() //FUNÇAO MAIN
             }
             while(opcao2>=1&&opcao2<5);
             if(opcao2<=1&&opcao2>5){
-            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-            printf("\t\t°                   OPCAO INVALIDA                  °\n");
-            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+            printf("\t\tÂ°                   OPCAO INVALIDA                  Â°\n");
+            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
             sleep(2);}
             system("cls");
         }
@@ -691,9 +691,9 @@ main() //FUNÇAO MAIN
                 case 1:
                 {
                     cadastroALUNO(&b);
-                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                 CADASTRO REALIZADO.               °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                 CADASTRO REALIZADO.               Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system("cls");
                 }
@@ -702,9 +702,9 @@ main() //FUNÇAO MAIN
                 case 2:
                 {
                     removerALUNO(&b);
-                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                     ALUNO REMOVIDO                °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                     ALUNO REMOVIDO                Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system ("cls");
                     carregar();
@@ -713,9 +713,9 @@ main() //FUNÇAO MAIN
                 case 3:
                 {
                     editarALUNO(&b);
-                    printf("\n\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                    ALUNO EDITADO.                 °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                    ALUNO EDITADO.                 Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system("cls");
                     carregar();
@@ -725,9 +725,9 @@ main() //FUNÇAO MAIN
                 case 4:
                 {
                     listaALUNO(&b);
-                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                   LISTA FINALIZADA                °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                   LISTA FINALIZADA                Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     system("pause");
                     system("cls");
                 }
@@ -743,9 +743,9 @@ main() //FUNÇAO MAIN
             }
             while(opcao2>=1&&opcao2<5);
             if(opcao2<=1&&opcao2>5){
-            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-            printf("\t\t°                   OPCAO INVALIDA                  °\n");
-            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+            printf("\t\tÂ°                   OPCAO INVALIDA                  Â°\n");
+            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
             sleep(2);}
             system("cls");
         }
@@ -762,9 +762,9 @@ main() //FUNÇAO MAIN
                 case 1:
                 {
                     novoemprestimo(&b,&a,&c);
-                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                   EMPRESTIMO REALIZADO            °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                   EMPRESTIMO REALIZADO            Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                             sleep(2);
                     system("cls");
                     carregar();
@@ -773,9 +773,9 @@ main() //FUNÇAO MAIN
                 case 2:
                 {
                     removerEMPRESTIMO(&c);
-                    printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                    printf("\t\t°                 EMPRESTIMO CANCELADO              °\n");
-                    printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                    printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                    printf("\t\tÂ°                 EMPRESTIMO CANCELADO              Â°\n");
+                    printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                     sleep(2);
                     system("cls");
                     carregar();
@@ -793,9 +793,9 @@ main() //FUNÇAO MAIN
                         case 1:
                         {
                             listaremprestimo(&c);
-                            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                            printf("\t\t°                   LISTA FINALIZADA                °\n");
-                            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                            printf("\t\tÂ°                   LISTA FINALIZADA                Â°\n");
+                            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                             sleep(2);
                             system("pause");
                             system("cls");
@@ -806,9 +806,9 @@ main() //FUNÇAO MAIN
                         case 2:
                         {
                             listaremprestimoLIVRO(&c);
-                            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                            printf("\t\t°                   LISTA FINALIZADA                °\n");
-                            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                            printf("\t\tÂ°                   LISTA FINALIZADA                Â°\n");
+                            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                             sleep(2);
                             system("pause");
                             system("cls");
@@ -817,9 +817,9 @@ main() //FUNÇAO MAIN
                         case 3:
                         {
                             listaremprestimoALUNO(&c);
-                            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-                            printf("\t\t°                   LISTA FINALIZADA                °\n");
-                            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+                            printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+                            printf("\t\tÂ°                   LISTA FINALIZADA                Â°\n");
+                            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
                             sleep(2);
                             system("pause");
                             system("cls");
@@ -864,9 +864,9 @@ main() //FUNÇAO MAIN
     }
 
     else{
-            printf("\n\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
-            printf("\t\t°                   OPCAO INVALIDA                  °\n");
-            printf("\t\t°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°\n");
+            printf("\n\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
+            printf("\t\tÂ°                   OPCAO INVALIDA                  Â°\n");
+            printf("\t\tÂ°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°Â°\n");
             sleep(2);}
 }
 while(opcao>=1&&opcao<4);
